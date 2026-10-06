@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airfrost Engineering Solutions — Engineered For Comfort</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Bebas Neue", "sans-serif"],
+              editorial: ["Playfair Display", "serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+            animation: {
+              marquee: "marquee 20s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* Keep horizontal layout overflow hidden and hide the browser scrollbar UI. */
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#f4f3f0] text-[#111] font-['Inter'] antialiased selection:bg-black selection:text-[#f4f3f0]"
+  >
+    <!-- Fixed navigation uses blend-difference so its white text stays visible over light and dark content. -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 mix-blend-difference px-5 md:px-12 py-4 md:py-6 flex flex-col md:flex-row md:justify-between md:items-center pointer-events-none"
+    >
+      <a
+        href="#"
+        class="pointer-events-auto flex items-center gap-2 md:gap-3 text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="48"
+          height="48"
+          class="h-10 w-10 md:h-12 md:w-12 shrink-0"
+          role="img"
+          aria-label="Airfrost animated ice and metallic A logo"
+        >
+          <defs>
+            <radialGradient id="bg-grad-anim" cx="50%" cy="50%" r="70%">
+              <stop offset="0%" stop-color="#1b2838" />
+              <stop offset="60%" stop-color="#0d131a" />
+              <stop offset="100%" stop-color="#05080c" />
+            </radialGradient>
+            <filter
+              id="shadow-anim"
+              x="-20%"
+              y="-20%"
+              width="150%"
+              height="150%"
+            >
+              <feDropShadow
+                dx="10"
+                dy="20"
+                stdDeviation="12"
+                flood-color="#000000"
+                flood-opacity="0.85"
+              />
+            </filter>
+            <filter
+              id="ice-glow-anim"
+              x="-40%"
+              y="-40%"
+              width="180%"
+              height="180%"
+            >
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+            <filter
+              id="electric-glow"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+            >
+              <feGaussianBlur stdDeviation="10" result="blur1" />
+              <feGaussianBlur stdDeviation="20" result="blur2" />
+              <feMerge>
+                <feMergeNode in="blur2" />
+                <feMergeNode in="blur1" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient
+              id="ice-light-anim"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#b3f5ff" />
+              <stop offset="50%" stop-color="#00d5ff" />
+              <stop offset="100%" stop-color="#0066b3" />
+            </linearGradient>
+            <linearGradient
+              id="ice-dark-anim"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#0088cc" />
+              <stop offset="100%" stop-color="#002b55" />
+            </linearGradient>
+            <linearGradient
+              id="chrome-anim"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#a0a0a0" />
+              <stop offset="20%" stop-color="#ffffff" />
+              <stop offset="40%" stop-color="#444444" />
+              <stop offset="50%" stop-color="#ffffff" />
+              <stop offset="60%" stop-color="#222222" />
+              <stop offset="80%" stop-color="#cccccc" />
+              <stop offset="100%" stop-color="#777777" />
+            </linearGradient>
+          </defs>
+          <style>
+            @keyframes float3D {
+              0% {
+                transform: translate(40px, 20px) rotateX(0deg) rotateY(0deg);
+              }
+              50% {
+                transform: translate(40px, 10px) rotateX(4deg) rotateY(-4deg);
+              }
+              100% {
+                transform: translate(40px, 20px) rotateX(0deg) rotateY(0deg);
+              }
+            }
+            @keyframes pulseGlow {
+              0%,
+              100% {
+                opacity: 0.6;
+                stroke: #00d5ff;
+              }
+              50% {
+                opacity: 1;
+                stroke: #ffffff;
+                filter: drop-shadow(0 0 12px #00d5ff);
+              }
+            }
+            @keyframes flareShine {
+              0%,
+              100% {
+                transform: translate(485px, 330px) scale(0.6);
+                opacity: 0.2;
+              }
+              50% {
+                transform: translate(485px, 330px) scale(1.3);
+                opacity: 1;
+              }
+            }
+            @keyframes lightningFlash {
+              0%,
+              90%,
+              100% {
+                opacity: 0.3;
+              }
+              92%,
+              96% {
+                opacity: 1;
+              }
+            }
+            .animated-group {
+              animation: float3D 6s ease-in-out infinite;
+              transform-origin: center;
+            }
+            .ice-pulse {
+              animation: pulseGlow 3s ease-in-out infinite;
+            }
+            .flare-anim {
+              animation: flareShine 4s ease-in-out infinite;
+              transform-origin: center;
+            }
+            .flash-anim {
+              animation: lightningFlash 5s step-start infinite;
+            }
+          </style>
+          <rect width="800" height="800" fill="url(#bg-grad-anim)" />
+          <g class="animated-group">
+            <g filter="url(#shadow-anim)">
+              <path
+                d="M 380,150 L 590,650 L 510,650 L 450,500 L 370,500 L 330,600 L 370,300 Z"
+                fill="#000"
+              />
+            </g>
+            <g id="ice-half-anim" filter="url(#ice-glow-anim)">
+              <path
+                class="ice-pulse"
+                d="M 350,160 L 320,220 L 340,320 L 290,420 L 320,520 L 270,620 L 230,650 L 250,600 L 300,510 L 260,410 L 310,310 L 290,220 Z"
+                fill="url(#ice-light-anim)"
+              />
+              <path
+                d="M 310,310 L 210,230 L 170,250 L 210,210 L 270,210 L 320,270 Z"
+                fill="url(#ice-light-anim)"
+              />
+              <path
+                d="M 230,245 L 200,200 L 230,200 Z"
+                fill="url(#ice-dark-anim)"
+              />
+              <path
+                d="M 285,400 L 160,360 L 120,380 L 160,330 L 230,340 L 295,370 Z"
+                fill="url(#ice-light-anim)"
+              />
+              <path
+                d="M 210,350 L 180,310 L 210,310 Z"
+                fill="url(#ice-dark-anim)"
+              />
+              <path
+                d="M 295,500 L 180,520 L 150,560 L 180,550 L 230,520 L 280,480 Z"
+                fill="url(#ice-light-anim)"
+              />
+              <path
+                d="M 210,530 L 190,570 L 220,550 Z"
+                fill="url(#ice-dark-anim)"
+              />
+            </g>
+            <g id="metallic-a-anim">
+              <path
+                d="M 370,140 L 610,660 L 515,660 L 460,530 L 350,530 L 310,630 L 250,630 L 340,410 L 380,410 L 330,500 L 440,500 L 360,310 L 400,210 Z"
+                fill="#111822"
+              />
+              <path
+                d="M 370,140 L 600,650 L 510,650 L 455,520 L 365,520 L 320,620 L 260,620 L 350,400 L 390,400 L 340,490 L 445,490 L 350,290 Z"
+                fill="url(#chrome-anim)"
+              />
+              <polygon
+                points="370,140 395,290 350,290 390,400 350,400 445,490 455,520 600,650 510,650 370,140"
+                fill="#ffffff"
+                opacity="0.25"
+              />
+              <polygon
+                points="370,140 350,290 445,490 365,520 320,620 260,620 350,400 390,400 340,490 445,490"
+                fill="#000000"
+                opacity="0.35"
+              />
+              <polyline
+                class="flash-anim"
+                points="370,140 350,290 390,400 340,490 455,520"
+                stroke="#00e5ff"
+                stroke-width="5"
+                fill="none"
+                filter="url(#electric-glow)"
+              />
+              <polygon points="380,340 435,470 365,470" fill="#090d12" />
+            </g>
+            <g class="flare-anim">
+              <ellipse
+                cx="0"
+                cy="0"
+                rx="35"
+                ry="4"
+                fill="#ffffff"
+                transform="rotate(-25)"
+                opacity="0.9"
+                filter="url(#ice-glow-anim)"
+              />
+              <ellipse
+                cx="0"
+                cy="0"
+                rx="4"
+                ry="35"
+                fill="#ffffff"
+                transform="rotate(-25)"
+                opacity="0.9"
+                filter="url(#ice-glow-anim)"
+              />
+              <circle
+                cx="0"
+                cy="0"
+                r="7"
+                fill="#ffffff"
+                filter="url(#ice-glow-anim)"
+              />
+            </g>
+          </g>
+        </svg>
+        <span
+          class="whitespace-nowrap font-display text-[13px] tracking-[0.06em] uppercase sm:text-base md:text-lg"
+          >Airfrost Engineering Solutions</span
+        >
+      </a>
+
+      <!-- The compact row can scroll horizontally on small screens; it becomes a single header row on desktop. -->
+      <nav
+        aria-label="Main navigation"
+        class="pointer-events-auto mt-3 flex items-center gap-x-5 overflow-x-auto whitespace-nowrap border-t border-white/20 pt-3 font-mono text-[9px] uppercase tracking-[0.1em] text-white sm:gap-x-7 md:mt-0 md:gap-x-6 md:border-0 md:pt-0 md:text-[10px]"
+      >
+        <a href="#hero" class="transition-opacity hover:opacity-60">Home</a>
+        <a href="#about" class="transition-opacity hover:opacity-60">About</a>
+        <a href="#services" class="transition-opacity hover:opacity-60"
+          >Services</a
+        >
+        <a href="#sectors" class="transition-opacity hover:opacity-60"
+          >Sectors</a
+        >
+        <a href="#why-choose" class="transition-opacity hover:opacity-60"
+          >Why Airfrost</a
+        >
+        <a href="#contact" class="transition-opacity hover:opacity-60"
+          >Contact</a
+        >
+      </nav>
+
+      <div class="pointer-events-auto hidden items-center gap-6 md:flex">
+        <span class="font-mono text-[10px] tracking-widest text-white uppercase"
+          >Engineered For Comfort !</span
+        >
+      </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <section
+      id="hero"
+      class="relative min-h-screen pt-24 pb-12 px-6 md:px-12 overflow-hidden flex flex-col justify-between"
+    >
+      <!-- Hero Content Grid -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto relative z-20"
+      >
+        <!-- Left Typography Column -->
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <div
+            class="font-mono text-xs tracking-widest text-stone-500 mb-2 uppercase"
+          >
+            Air Conditioning • Refrigeration • Electrical Solutions
+          </div>
+          <h1
+            class="font-display text-7xl sm:text-8xl md:text-[11rem] lg:text-[12rem] leading-none tracking-tight mix-blend-multiply uppercase text-[#111]"
+          >
+            Engineered<br />For Comfort !
+          </h1>
+          <p
+            class="font-editorial italic text-xl md:text-3xl text-stone-700 mt-4 max-w-xl"
+          >
+            High-performance HVAC, industrial cooling, and precision electrical
+            systems tailored for ultimate climate control.
+          </p>
+        </div>
+
+        <!-- Right image column layers the gray block, blueprint, grayscale image, and status card. -->
+        <div class="lg:col-span-5 relative">
+          <!-- Background L1 Box -->
+          <div
+            class="absolute -inset-4 bg-[#e5e4df] rounded-none lg:w-[120%] -z-10"
+          ></div>
+
+          <!-- Blueprint Overlay L2 -->
+          <svg
+            class="absolute -top-10 -left-10 w-full h-full z-0 opacity-30 pointer-events-none"
+            viewBox="0 0 400 100"
+          >
+            <path
+              d="M10 50 Q 100 10, 200 50 T 390 50 M20 30 L380 30 M20 70 L380 70"
+              stroke="#111"
+              stroke-width="0.5"
+              fill="none"
+            />
+            <circle
+              cx="200"
+              cy="50"
+              r="30"
+              stroke="#111"
+              stroke-width="0.2"
+              fill="none"
+            />
+            <circle cx="200" cy="50" r="2" fill="#111" />
+          </svg>
+
+          <!-- Hero Image L3 -->
+          <div class="relative z-10 overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1600&auto=format&fit=crop"
+              alt="HVAC Installation Technician"
+              class="w-full h-[450px] md:h-[550px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+
+          <!-- Status L5 Protruding UI -->
+          <div
+            class="absolute -bottom-6 -right-6 z-30 bg-[#111] text-[#f4f3f0] p-6 font-mono text-xs flex flex-col gap-2 shadow-xl"
+          >
+            <div class="flex items-center gap-4">
+              <span class="text-stone-400">STANDARDS</span>
+              <span class="font-bold">01 // HIGH PERFORMANCE</span>
+            </div>
+            <div class="w-32 bg-stone-800 h-1 relative overflow-hidden">
+              <div class="bg-white h-full w-4/5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 flex justify-between items-end font-mono text-xs text-stone-500 border-t border-black/10 pt-4"
+      >
+        <div>[ AIR CONDITIONING / REFRIGERATION / ELECTRICAL ]</div>
+        <div>KAMPALA, UGANDA</div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TECH BAR / CORE METRICS -->
+    <section
+      class="relative z-40 bg-[#111] text-[#f4f3f0] border-y border-white/10"
+    >
+      <div
+        class="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-7 font-mono text-xs divide-x divide-y md:divide-y-0 divide-white/10"
+      >
+        <div
+          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+        >
+          <span class="text-stone-500">01 / SECTORS</span>
+          <span class="text-lg font-bold mt-2">RESIDENTIAL</span>
+        </div>
+        <div
+          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+        >
+          <span class="text-stone-500">02 / SECTORS</span>
+          <span class="text-lg font-bold mt-2">INDUSTRIAL</span>
+        </div>
+        <div
+          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+        >
+          <span class="text-stone-500">03 / SECTORS</span>
+          <span class="text-lg font-bold mt-2">COMMERCIAL</span>
+        </div>
+        <div
+          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+        >
+          <span class="text-stone-500">04 / SPEED</span>
+          <span class="text-lg font-bold mt-2">FAST RESPONSE</span>
+        </div>
+        <div
+          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+        >
+          <span class="text-stone-500">05 / QUALITY</span>
+          <span class="text-lg font-bold mt-2">PRECISION</span>
+        </div>
+        <div
+          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+        >
+          <span class="text-stone-500">06 / RATING</span>
+          <span class="text-lg font-bold mt-2">ENERGY SAFE</span>
+        </div>
+        <!-- Inverted CTA Box -->
+        <a
+          href="#contact"
+          class="col-span-2 md:col-span-6 lg:col-span-1 bg-[#f4f3f0] text-[#111] p-6 flex items-center justify-between group cursor-pointer"
+        >
+          <span class="font-bold tracking-wider uppercase font-sans"
+            >CONTACT</span
+          >
+          <i
+            data-lucide="arrow-up-right"
+            class="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+          ></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ABOUT US & SERVICES -->
+    <section id="about" class="py-24 px-6 md:px-12">
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-black/10 pb-8"
+      >
+        <div>
+          <span
+            class="font-mono text-xs text-stone-500 tracking-widest uppercase"
+            >ABOUT AIRFROST</span
+          >
+          <h2 class="font-editorial text-4xl md:text-6xl font-normal mt-2">
+            Your Comfort Is Our Mission.
+          </h2>
+        </div>
+        <p class="font-sans text-sm text-stone-600 max-w-sm mt-4 md:mt-0">
+          We are a professional Engineering Company that delivers High
+          Performance Air Conditioning, Refrigeration, and Electrical Solutions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <!-- Service Card 1 -->
+        <div id="services" class="group cursor-pointer">
+          <div class="overflow-hidden bg-stone-300 relative aspect-[4/3]">
+            <img
+              src="https://media.istockphoto.com/id/1389855299/photo/close-up-view-of-air-conditioner-in-modern-open-plan-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=W85ene3xZeQoG45dYrH217pXAK_FndRZfE3CPNoygVA="
+              alt="Commercial VRVs & Air Regulation"
+              class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
+            />
+            <span
+              class="absolute top-4 left-4 bg-[#111] text-[#f4f3f0] font-mono text-[10px] px-3 py-1"
+              >SERVICE // 001</span
+            >
+          </div>
+          <div class="mt-6 flex justify-between items-start">
+            <div>
+              <h3 class="font-display text-3xl tracking-wide uppercase">
+                Commercial Units / VRVs & Aeration Setup
+              </h3>
+              <p class="font-mono text-xs text-stone-500 mt-1">
+                OFFICES, WORKPLACES & COMMERCIAL AIR REGULATION
+              </p>
+            </div>
+            <span class="font-editorial italic text-xl">01</span>
+          </div>
+        </div>
+
+        <!-- Offset the second card on desktop for the staggered editorial layout. -->
+        <div class="group cursor-pointer md:mt-24">
+          <div class="overflow-hidden bg-stone-300 relative aspect-[4/3]">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYValRf9tUI4EdIN8TAJRAH3lngFJHdlU7AhMF3BZ59w&s=10"
+              alt="Industrial Cooling Systems Installation"
+              class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
+            />
+            <span
+              class="absolute top-4 left-4 bg-[#111] text-[#f4f3f0] font-mono text-[10px] px-3 py-1"
+              >SERVICE // 002</span
+            >
+          </div>
+          <div class="mt-6 flex justify-between items-start">
+            <div>
+              <h3 class="font-display text-3xl tracking-wide uppercase">
+                Industrial Cooling Systems & Material Supply
+              </h3>
+              <p class="font-mono text-xs text-stone-500 mt-1">
+                INDUSTRIAL COOLING, MATERIAL & EQUIPMENT SUPPLY
+              </p>
+            </div>
+            <span class="font-editorial italic text-xl">02</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MANIFESTO -->
+    <section
+      id="manifesto"
+      class="relative bg-[#111] text-[#f4f3f0] py-32 px-6 md:px-12 overflow-hidden"
+    >
+      <!-- High Contrast Background -->
+      <div class="absolute inset-0 opacity-20 pointer-events-none">
+        <img
+          src="https://media.istockphoto.com/id/1389855299/photo/close-up-view-of-air-conditioner-in-modern-open-plan-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=W85ene3xZeQoG45dYrH217pXAK_FndRZfE3CPNoygVA="
+          alt="Engineering Infrastructure"
+          class="w-full h-full object-cover grayscale contrast-200"
+        />
+      </div>
+
+      <div
+        class="relative z-10 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+      >
+        <div class="lg:col-span-8 order-2 lg:order-1">
+          <span
+            class="font-mono text-xs text-stone-400 tracking-widest uppercase"
+            >[ CORPORATE MANIFESTO ]</span
+          >
+          <h2
+            class="font-editorial text-4xl sm:text-5xl md:text-6xl font-normal leading-tight mt-6"
+          >
+            "We serve Residential, Industrial and Commercial clients with a
+            strong focus on reliability, efficiency and guaranteed performance."
+          </h2>
+          <p
+            class="font-sans text-stone-400 mt-8 max-w-xl text-sm leading-relaxed"
+          >
+            Airfrost Engineering Solutions Ltd delivers complete climate,
+            refrigeration, and electrical setup with end-to-end support,
+            professional workmanship, and energy-conscious system designs.
+          </p>
+        </div>
+
+        <div
+          class="lg:col-span-4 order-1 lg:order-2 flex flex-col items-start lg:items-end font-mono text-xs text-stone-400 gap-4 border-l lg:border-l-0 lg:border-r border-white/20 pl-6 lg:pl-0 lg:pr-6"
+        >
+          <div>
+            <span class="text-white block font-bold">CLIENTELE</span>
+            <span>RESIDENTIAL / INDUSTRIAL / COMMERCIAL</span>
+          </div>
+          <div>
+            <span class="text-white block font-bold">BRANDS</span>
+            <span>HISENSE & LEADING HVAC MANUFACTURERS</span>
+          </div>
+          <div>
+            <span class="text-white block font-bold">CORE VALUES</span>
+            <span>RELIABILITY, EFFICIENCY, PRECISION</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: TARGET SECTORS -->
+    <section id="sectors" class="py-24 px-6 md:px-12">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12"
+      >
+        <div>
+          <span
+            class="font-mono text-xs text-stone-500 tracking-widest uppercase"
+            >INDUSTRIES & CLIENTS</span
+          >
+          <h2 class="font-editorial text-4xl md:text-5xl font-normal mt-2">
+            Key Sectors Served
+          </h2>
+        </div>
+        <span class="font-mono text-xs text-stone-500 mt-4 md:mt-0"
+          >SCROLL HORIZONTALLY →</span
+        >
+      </div>
+
+      <!-- Horizontal Snap Scroller -->
+      <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-2">
+        <!-- Sector 1 -->
+        <div
+          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop"
+            alt="Hospitals Sector"
+            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+          >
+            <span class="font-mono text-xs tracking-widest">SECTOR // 01</span>
+            <div>
+              <h3 class="font-display text-4xl">HOSPITALS</h3>
+              <p class="font-sans text-xs text-stone-300 mt-2">
+                Critical environment aeration, cleanroom cooling, and
+                uninterrupted refrigeration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sector 2 -->
+        <div
+          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
+            alt="Residentials Sector"
+            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+          >
+            <span class="font-mono text-xs tracking-widest">SECTOR // 02</span>
+            <div>
+              <h3 class="font-display text-4xl">RESIDENTIALS</h3>
+              <p class="font-sans text-xs text-stone-300 mt-2">
+                Home split AC installation, air quality management, and routine
+                servicing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sector 3 -->
+        <div
+          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+            alt="Commercials Sector"
+            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+          >
+            <span class="font-mono text-xs tracking-widest">SECTOR // 03</span>
+            <div>
+              <h3 class="font-display text-4xl">COMMERCIALS</h3>
+              <p class="font-sans text-xs text-stone-300 mt-2">
+                Offices, retail spaces, workplace climate systems, and large VRV
+                networks.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sector 4 -->
+        <div
+          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop"
+            alt="Hotels Sector"
+            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+          >
+            <span class="font-mono text-xs tracking-widest">SECTOR // 04</span>
+            <div>
+              <h3 class="font-display text-4xl">HOTELS</h3>
+              <p class="font-sans text-xs text-stone-300 mt-2">
+                Centralized air conditioning, kitchen refrigeration, and guest
+                comfort optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SERVICES LIST; plus icons are a visual cue and these rows are not expandable. -->
+    <section class="py-24 px-6 md:px-12 border-t border-black/10">
+      <div class="max-w-4xl mb-12">
+        <span class="font-mono text-xs text-stone-500 tracking-widest uppercase"
+          >OUR SERVICES BREAKDOWN</span
+        >
+        <h2 class="font-editorial text-4xl md:text-5xl font-normal mt-2">
+          Comprehensive Solutions
+        </h2>
+      </div>
+
+      <div class="divide-y divide-black/10">
+        <!-- Service 1 -->
+        <div
+          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+        >
+          <div class="flex justify-between items-center">
+            <span class="font-mono text-xs text-stone-500">01</span>
+            <h3
+              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            >
+              Residential AC Installation & Maintenance
+            </h3>
+            <i
+              data-lucide="plus"
+              class="w-6 h-6 transition-transform group-hover:rotate-90"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div
+          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+        >
+          <div class="flex justify-between items-center">
+            <span class="font-mono text-xs text-stone-500">02</span>
+            <h3
+              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            >
+              Commercial Units / VRVS & Aeration Setup
+            </h3>
+            <i
+              data-lucide="plus"
+              class="w-6 h-6 transition-transform group-hover:rotate-90"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div
+          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+        >
+          <div class="flex justify-between items-center">
+            <span class="font-mono text-xs text-stone-500">03</span>
+            <h3
+              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            >
+              Offices and Workplace Air Regulation
+            </h3>
+            <i
+              data-lucide="plus"
+              class="w-6 h-6 transition-transform group-hover:rotate-90"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div
+          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+        >
+          <div class="flex justify-between items-center">
+            <span class="font-mono text-xs text-stone-500">04</span>
+            <h3
+              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            >
+              General Air Systems Maintenance
+            </h3>
+            <i
+              data-lucide="plus"
+              class="w-6 h-6 transition-transform group-hover:rotate-90"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div
+          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+        >
+          <div class="flex justify-between items-center">
+            <span class="font-mono text-xs text-stone-500">05</span>
+            <h3
+              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            >
+              Industrial Cooling Systems Installation
+            </h3>
+            <i
+              data-lucide="plus"
+              class="w-6 h-6 transition-transform group-hover:rotate-90"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div
+          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+        >
+          <div class="flex justify-between items-center">
+            <span class="font-mono text-xs text-stone-500">06</span>
+            <h3
+              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            >
+              Material & Equipment Supply
+            </h3>
+            <i
+              data-lucide="plus"
+              class="w-6 h-6 transition-transform group-hover:rotate-90"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: WHY CHOOSE AIRFROST -->
+    <section id="why-choose" class="py-24 px-6 md:px-12 bg-[#e8e7e1]">
+      <div class="max-w-4xl mb-16">
+        <span class="font-mono text-xs text-stone-500 tracking-widest uppercase"
+          >EXPERTISE & TRUST</span
+        >
+        <h2 class="font-editorial text-4xl md:text-6xl font-normal mt-2">
+          Why Choose Airfrost
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pillar 1 -->
+        <div
+          class="bg-[#f4f3f0] p-8 flex flex-col justify-between h-[320px] border border-black/10"
+        >
+          <div
+            class="w-12 h-12 bg-[#111] text-[#f4f3f0] rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="font-mono text-xs text-stone-500">PILLAR 01</span>
+            <h3 class="font-display text-3xl uppercase mt-2">
+              Fast Response & Guaranteed Reliability
+            </h3>
+            <p class="font-sans text-xs text-stone-600 mt-2">
+              Prompt dispatch, rapid diagnostic turnarounds, and reliable system
+              upkeep.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div
+          class="bg-[#f4f3f0] p-8 flex flex-col justify-between h-[320px] border border-black/10"
+        >
+          <div
+            class="w-12 h-12 bg-[#111] text-[#f4f3f0] rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="font-mono text-xs text-stone-500">PILLAR 02</span>
+            <h3 class="font-display text-3xl uppercase mt-2">
+              Precision & Professional Workmanship
+            </h3>
+            <h4 class="font-mono text-xs text-stone-500">EXPERTISE</h4>
+            <p class="font-sans text-xs text-stone-600 mt-2">
+              Certified technicians executing standard-compliant installations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div
+          class="bg-[#f4f3f0] p-8 flex flex-col justify-between h-[320px] border border-black/10"
+        >
+          <div
+            class="w-12 h-12 bg-[#111] text-[#f4f3f0] rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="font-mono text-xs text-stone-500">PILLAR 03</span>
+            <h3 class="font-display text-3xl uppercase mt-2">
+              Safe & Energy Efficient Solutions
+            </h3>
+            <p class="font-sans text-xs text-stone-600 mt-2">
+              Optimized electrical setups and cooling units engineered for
+              energy saving.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: BRAND MARQUEE; the repeated content keeps the moving strip visually continuous. -->
+    <section class="py-16 bg-[#111] text-[#f4f3f0] overflow-hidden">
+      <div class="flex whitespace-nowrap animate-marquee">
+        <div
+          class="flex gap-16 font-display text-5xl md:text-7xl tracking-wider text-[#f4f3f0]/30 shrink-0"
+        >
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >HISENSE</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >AIR CONDITIONING</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >REFRIGERATION</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >ELECTRICAL SOLUTIONS</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >VRV UNITS</span
+          >
+          <span>—</span>
+        </div>
+        <div
+          class="flex gap-16 font-display text-5xl md:text-7xl tracking-wider text-[#f4f3f0]/30 shrink-0"
+          aria-hidden="true"
+        >
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >HISENSE</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >AIR CONDITIONING</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >REFRIGERATION</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >ELECTRICAL SOLUTIONS</span
+          >
+          <span>—</span>
+          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+            >VRV UNITS</span
+          >
+          <span>—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: FOOTER & CONTACT -->
+    <footer
+      id="contact"
+      class="relative z-10 bg-[#111] text-[#f4f3f0] rounded-t-[2rem] md:rounded-t-[4rem] -mt-12 pt-20 pb-12 px-6 md:px-12"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10"
+      >
+        <!-- Contact Header -->
+        <div class="lg:col-span-7">
+          <span
+            class="font-mono text-xs text-stone-400 tracking-widest uppercase"
+            >GET IN TOUCH WITH US ON</span
+          >
+          <div
+            class="mt-6 flex flex-col gap-4 font-mono text-lg md:text-2xl text-stone-200"
+          >
+            <a
+              href="tel:+256756370690"
+              class="hover:text-white transition-colors flex items-center gap-3"
+            >
+              <i data-lucide="phone" class="w-6 h-6 text-stone-400"></i> +256
+              756 370 690
+            </a>
+            <a
+              href="tel:+256747179967"
+              class="hover:text-white transition-colors flex items-center gap-3"
+            >
+              <i data-lucide="phone-call" class="w-6 h-6 text-stone-400"></i>
+              +256 747 179 967
+            </a>
+            <a
+              href="mailto:airfrostengineeringltd@gmail.com"
+              class="hover:text-white transition-colors flex items-center gap-3 break-all"
+            >
+              <i data-lucide="mail" class="w-6 h-6 text-stone-400"></i>
+              airfrostengineeringltd@gmail.com
+            </a>
+            <div
+              class="flex items-center gap-3 text-stone-400 font-sans text-sm mt-2"
+            >
+              <i data-lucide="map-pin" class="w-6 h-6 text-stone-400"></i>
+              204387 KAMPALA GPO (Postal Address)
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <h2
+              class="font-display text-6xl sm:text-7xl md:text-8xl tracking-tight"
+            >
+              ENGINEERED FOR COMFORT !
+            </h2>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-5 flex flex-col justify-end">
+          <!-- Demo form: submission is intentionally prevented until a backend endpoint is connected. -->
+          <form class="flex flex-col gap-6" onsubmit="event.preventDefault()">
+            <div>
+              <label class="font-mono text-xs text-stone-400 uppercase"
+                >Your Name / Organization</label
+              >
+              <input
+                type="text"
+                placeholder="e.g. Kampala Medical Center / Hotel Manager"
+                class="w-full bg-transparent border-b border-white/30 py-3 text-sm focus:outline-none focus:border-white placeholder:text-white/30 font-sans"
+              />
+            </div>
+            <div>
+              <label class="font-mono text-xs text-stone-400 uppercase"
+                >Email / Phone</label
+              >
+              <input
+                type="text"
+                placeholder="Contact Details..."
+                class="w-full bg-transparent border-b border-white/30 py-3 text-sm focus:outline-none focus:border-white placeholder:text-white/30 font-sans"
+              />
+            </div>
+            <div>
+              <label class="font-mono text-xs text-stone-400 uppercase"
+                >Required Engineering Service</label
+              >
+              <input
+                type="text"
+                placeholder="AC Installation, Maintenance, VRV System, Refrigeration..."
+                class="w-full bg-transparent border-b border-white/30 py-3 text-sm focus:outline-none focus:border-white placeholder:text-white/30 font-sans"
+              />
+            </div>
+            <button
+              type="submit"
+              class="mt-4 bg-[#f4f3f0] text-[#111] py-4 font-mono text-xs font-bold uppercase tracking-widest hover:bg-stone-300 transition-colors"
+            >
+              SEND INQUIRY
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Meta Footer -->
+      <div
+        class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-xs text-stone-500"
+      >
+        <div class="flex items-center gap-3">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="text-white"
+          >
+            <path d="M12 24V11.5L0 0H6.5L12 6.5L17.5 0H24L12 11.5V24Z" />
+          </svg>
+          <span class="text-white font-bold"
+            >AIRFROST ENGINEERING SOLUTIONS LTD</span
+          >
+        </div>
+
+        <div>204387 KAMPALA GPO (POSTAL ADDRESS)</div>
+
+        <div>© 2026 AIRFROST. ALL RIGHTS RESERVED.</div>
+      </div>
+    </footer>
+
+    <!-- JS Menu Controller & Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
