@@ -25,6 +25,25 @@
               editorial: ["Playfair Display", "serif"],
               mono: ["JetBrains Mono", "monospace"],
             },
+            colors: {
+              "air-blue": "#00A3E0",
+              "frost-cyan": "#00D2FF",
+              midnight: "#0B1B2B",
+              steel: "#4A5568",
+              chrome: "#D1D5DB",
+              ice: "#F0F8FF",
+              paper: "#FFFFFF",
+              stone: {
+                200: "#D1D5DB",
+                300: "#D1D5DB",
+                400: "#D1D5DB",
+                500: "#4A5568",
+                600: "#4A5568",
+                700: "#0B1B2B",
+                800: "#0B1B2B",
+                900: "#0B1B2B",
+              },
+            },
             keyframes: {
               marquee: {
                 "0%": { transform: "translateX(0%)" },
@@ -60,11 +79,11 @@
     </style>
   </head>
   <body
-    class="bg-[#f4f3f0] text-[#111] font-['Inter'] antialiased selection:bg-black selection:text-[#f4f3f0]"
+    class="bg-paper text-midnight font-['Inter'] antialiased selection:bg-air-blue selection:text-paper"
   >
-    <!-- Fixed navigation uses blend-difference so its white text stays visible over light and dark content. -->
+    <!-- Fixed navigation matches the AirFrost blue contact CTA. -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 mix-blend-difference px-5 md:px-12 py-4 md:py-6 flex flex-col md:flex-row md:justify-between md:items-center pointer-events-none"
+      class="fixed top-0 left-0 right-0 z-50 bg-air-blue text-paper px-5 md:px-12 py-4 md:py-6 flex flex-col md:flex-row md:justify-between md:items-center pointer-events-none"
     >
       <a
         href="#"
@@ -81,9 +100,9 @@
         >
           <defs>
             <radialGradient id="bg-grad-anim" cx="50%" cy="50%" r="70%">
-              <stop offset="0%" stop-color="#1b2838" />
-              <stop offset="60%" stop-color="#0d131a" />
-              <stop offset="100%" stop-color="#05080c" />
+              <stop offset="0%" stop-color="#0B1B2B" />
+              <stop offset="60%" stop-color="#0B1B2B" />
+              <stop offset="100%" stop-color="#0B1B2B" />
             </radialGradient>
             <filter
               id="shadow-anim"
@@ -96,7 +115,7 @@
                 dx="10"
                 dy="20"
                 stdDeviation="12"
-                flood-color="#000000"
+                flood-color="#0B1B2B"
                 flood-opacity="0.85"
               />
             </filter>
@@ -132,9 +151,9 @@
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stop-color="#b3f5ff" />
-              <stop offset="50%" stop-color="#00d5ff" />
-              <stop offset="100%" stop-color="#0066b3" />
+              <stop offset="0%" stop-color="#F0F8FF" />
+              <stop offset="50%" stop-color="#00D2FF" />
+              <stop offset="100%" stop-color="#00A3E0" />
             </linearGradient>
             <linearGradient
               id="ice-dark-anim"
@@ -143,8 +162,8 @@
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stop-color="#0088cc" />
-              <stop offset="100%" stop-color="#002b55" />
+              <stop offset="0%" stop-color="#00A3E0" />
+              <stop offset="100%" stop-color="#0B1B2B" />
             </linearGradient>
             <linearGradient
               id="chrome-anim"
@@ -153,13 +172,13 @@
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stop-color="#a0a0a0" />
-              <stop offset="20%" stop-color="#ffffff" />
-              <stop offset="40%" stop-color="#444444" />
-              <stop offset="50%" stop-color="#ffffff" />
-              <stop offset="60%" stop-color="#222222" />
-              <stop offset="80%" stop-color="#cccccc" />
-              <stop offset="100%" stop-color="#777777" />
+              <stop offset="0%" stop-color="#4A5568" />
+              <stop offset="20%" stop-color="#FFFFFF" />
+              <stop offset="40%" stop-color="#0B1B2B" />
+              <stop offset="50%" stop-color="#FFFFFF" />
+              <stop offset="60%" stop-color="#0B1B2B" />
+              <stop offset="80%" stop-color="#D1D5DB" />
+              <stop offset="100%" stop-color="#4A5568" />
             </linearGradient>
           </defs>
           <style>
@@ -178,12 +197,12 @@
               0%,
               100% {
                 opacity: 0.6;
-                stroke: #00d5ff;
+                stroke: #00a3e0;
               }
               50% {
                 opacity: 1;
                 stroke: #ffffff;
-                filter: drop-shadow(0 0 12px #00d5ff);
+                filter: drop-shadow(0 0 12px #00d2ff);
               }
             }
             @keyframes flareShine {
@@ -228,7 +247,7 @@
             <g filter="url(#shadow-anim)">
               <path
                 d="M 380,150 L 590,650 L 510,650 L 450,500 L 370,500 L 330,600 L 370,300 Z"
-                fill="#000"
+                fill="#0B1B2B"
               />
             </g>
             <g id="ice-half-anim" filter="url(#ice-glow-anim)">
@@ -265,7 +284,7 @@
             <g id="metallic-a-anim">
               <path
                 d="M 370,140 L 610,660 L 515,660 L 460,530 L 350,530 L 310,630 L 250,630 L 340,410 L 380,410 L 330,500 L 440,500 L 360,310 L 400,210 Z"
-                fill="#111822"
+                fill="#0B1B2B"
               />
               <path
                 d="M 370,140 L 600,650 L 510,650 L 455,520 L 365,520 L 320,620 L 260,620 L 350,400 L 390,400 L 340,490 L 445,490 L 350,290 Z"
@@ -273,23 +292,23 @@
               />
               <polygon
                 points="370,140 395,290 350,290 390,400 350,400 445,490 455,520 600,650 510,650 370,140"
-                fill="#ffffff"
+                fill="#FFFFFF"
                 opacity="0.25"
               />
               <polygon
                 points="370,140 350,290 445,490 365,520 320,620 260,620 350,400 390,400 340,490 445,490"
-                fill="#000000"
+                fill="#0B1B2B"
                 opacity="0.35"
               />
               <polyline
                 class="flash-anim"
                 points="370,140 350,290 390,400 340,490 455,520"
-                stroke="#00e5ff"
+                stroke="#00D2FF"
                 stroke-width="5"
                 fill="none"
                 filter="url(#electric-glow)"
               />
-              <polygon points="380,340 435,470 365,470" fill="#090d12" />
+              <polygon points="380,340 435,470 365,470" fill="#0B1B2B" />
             </g>
             <g class="flare-anim">
               <ellipse
@@ -323,7 +342,7 @@
           </g>
         </svg>
         <span
-          class="whitespace-nowrap font-display text-[13px] tracking-[0.06em] uppercase sm:text-base md:text-lg"
+          class="whitespace-nowrap font-display text-[28px] tracking-[0.06em] uppercase sm:text-base md:text-lg"
           >Airfrost Engineering Solutions</span
         >
       </a>
@@ -331,29 +350,29 @@
       <!-- The compact row can scroll horizontally on small screens; it becomes a single header row on desktop. -->
       <nav
         aria-label="Main navigation"
-        class="pointer-events-auto mt-3 flex items-center gap-x-5 overflow-x-auto whitespace-nowrap border-t border-white/20 pt-3 font-mono text-[9px] uppercase tracking-[0.1em] text-white sm:gap-x-7 md:mt-0 md:gap-x-6 md:border-0 md:pt-0 md:text-[10px]"
+        class="pointer-events-auto mt-3 flex items-center gap-x-5 overflow-x-auto whitespace-nowrap border-t border-chrome/30 pt-3 font-mono text-[9px] uppercase tracking-[0.1em] text-white sm:gap-x-7 md:mt-0 md:gap-x-6 md:border-0 md:pt-0 md:text-[13px]"
       >
-        <a href="#hero" class="transition-opacity hover:opacity-60">Home</a>
-        <a href="#about" class="transition-opacity hover:opacity-60">About</a>
-        <a href="#services" class="transition-opacity hover:opacity-60"
+        <a href="#hero" class="transition-colors hover:text-midnight">Home</a>
+        <a href="#about" class="transition-colors hover:text-midnight">About</a>
+        <a href="#services" class="transition-colors hover:text-midnight"
           >Services</a
         >
-        <a href="#sectors" class="transition-opacity hover:opacity-60"
+        <a href="#sectors" class="transition-colors hover:text-midnight"
           >Sectors</a
         >
-        <a href="#why-choose" class="transition-opacity hover:opacity-60"
+        <a href="#why-choose" class="transition-colors hover:text-midnight"
           >Why Airfrost</a
         >
-        <a href="#contact" class="transition-opacity hover:opacity-60"
+        <a href="#contact" class="transition-colors hover:text-midnight"
           >Contact</a
         >
       </nav>
 
-      <div class="pointer-events-auto hidden items-center gap-6 md:flex">
-        <span class="font-mono text-[10px] tracking-widest text-white uppercase"
+      <!-- <div class="pointer-events-auto hidden items-center gap-6 md:flex">
+        <span class="font-mono text-[15px] tracking-widest text-white uppercase"
           >Engineered For Comfort !</span
         >
-      </div>
+      </div> -->
     </header>
 
     <!-- SECTION 1: HERO -->
@@ -373,7 +392,7 @@
             Air Conditioning • Refrigeration • Electrical Solutions
           </div>
           <h1
-            class="font-display text-7xl sm:text-8xl md:text-[11rem] lg:text-[12rem] leading-none tracking-tight mix-blend-multiply uppercase text-[#111]"
+            class="font-display text-7xl sm:text-8xl md:text-[11rem] lg:text-[12rem] leading-none tracking-tight mix-blend-multiply uppercase text-midnight"
           >
             Engineered<br />For Comfort !
           </h1>
@@ -389,7 +408,7 @@
         <div class="lg:col-span-5 relative">
           <!-- Background L1 Box -->
           <div
-            class="absolute -inset-4 bg-[#e5e4df] rounded-none lg:w-[120%] -z-10"
+            class="absolute -inset-4 bg-ice rounded-none lg:w-[120%] -z-10"
           ></div>
 
           <!-- Blueprint Overlay L2 -->
@@ -399,7 +418,7 @@
           >
             <path
               d="M10 50 Q 100 10, 200 50 T 390 50 M20 30 L380 30 M20 70 L380 70"
-              stroke="#111"
+              stroke="#0B1B2B"
               stroke-width="0.5"
               fill="none"
             />
@@ -407,11 +426,11 @@
               cx="200"
               cy="50"
               r="30"
-              stroke="#111"
+              stroke="#0B1B2B"
               stroke-width="0.2"
               fill="none"
             />
-            <circle cx="200" cy="50" r="2" fill="#111" />
+            <circle cx="200" cy="50" r="2" fill="#0B1B2B" />
           </svg>
 
           <!-- Hero Image L3 -->
@@ -425,21 +444,21 @@
 
           <!-- Status L5 Protruding UI -->
           <div
-            class="absolute -bottom-6 -right-6 z-30 bg-[#111] text-[#f4f3f0] p-6 font-mono text-xs flex flex-col gap-2 shadow-xl"
+            class="absolute -bottom-6 -right-6 z-30 bg-midnight text-paper p-6 font-mono text-xs flex flex-col gap-2 shadow-xl"
           >
             <div class="flex items-center gap-4">
-              <span class="text-stone-400">STANDARDS</span>
+              <span class="text-chrome">STANDARDS</span>
               <span class="font-bold">01 // HIGH PERFORMANCE</span>
             </div>
             <div class="w-32 bg-stone-800 h-1 relative overflow-hidden">
-              <div class="bg-white h-full w-4/5"></div>
+              <div class="bg-frost-cyan h-full w-4/5"></div>
             </div>
           </div>
         </div>
       </div>
 
       <div
-        class="mt-12 flex justify-between items-end font-mono text-xs text-stone-500 border-t border-black/10 pt-4"
+        class="mt-12 flex justify-between items-end font-mono text-xs text-steel border-t border-chrome/60 pt-4"
       >
         <div>[ AIR CONDITIONING / REFRIGERATION / ELECTRICAL ]</div>
         <div>KAMPALA, UGANDA</div>
@@ -448,43 +467,43 @@
 
     <!-- SECTION 2: TECH BAR / CORE METRICS -->
     <section
-      class="relative z-40 bg-[#111] text-[#f4f3f0] border-y border-white/10"
+      class="relative z-40 bg-midnight text-paper border-y border-chrome/20"
     >
       <div
-        class="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-7 font-mono text-xs divide-x divide-y md:divide-y-0 divide-white/10"
+        class="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-7 font-mono text-xs divide-x divide-y md:divide-y-0 divide-chrome/20"
       >
         <div
-          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+          class="p-6 flex flex-col justify-between hover:bg-frost-cyan/10 transition-colors"
         >
           <span class="text-stone-500">01 / SECTORS</span>
           <span class="text-lg font-bold mt-2">RESIDENTIAL</span>
         </div>
         <div
-          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+          class="p-6 flex flex-col justify-between hover:bg-frost-cyan/10 transition-colors"
         >
           <span class="text-stone-500">02 / SECTORS</span>
           <span class="text-lg font-bold mt-2">INDUSTRIAL</span>
         </div>
         <div
-          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+          class="p-6 flex flex-col justify-between hover:bg-frost-cyan/10 transition-colors"
         >
           <span class="text-stone-500">03 / SECTORS</span>
           <span class="text-lg font-bold mt-2">COMMERCIAL</span>
         </div>
         <div
-          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+          class="p-6 flex flex-col justify-between hover:bg-frost-cyan/10 transition-colors"
         >
           <span class="text-stone-500">04 / SPEED</span>
           <span class="text-lg font-bold mt-2">FAST RESPONSE</span>
         </div>
         <div
-          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+          class="p-6 flex flex-col justify-between hover:bg-frost-cyan/10 transition-colors"
         >
           <span class="text-stone-500">05 / QUALITY</span>
           <span class="text-lg font-bold mt-2">PRECISION</span>
         </div>
         <div
-          class="p-6 flex flex-col justify-between hover:bg-white/5 transition-colors"
+          class="p-6 flex flex-col justify-between hover:bg-frost-cyan/10 transition-colors"
         >
           <span class="text-stone-500">06 / RATING</span>
           <span class="text-lg font-bold mt-2">ENERGY SAFE</span>
@@ -492,7 +511,7 @@
         <!-- Inverted CTA Box -->
         <a
           href="#contact"
-          class="col-span-2 md:col-span-6 lg:col-span-1 bg-[#f4f3f0] text-[#111] p-6 flex items-center justify-between group cursor-pointer"
+          class="col-span-2 md:col-span-6 lg:col-span-1 bg-air-blue text-paper p-6 flex items-center justify-between group cursor-pointer transition-colors hover:bg-frost-cyan"
         >
           <span class="font-bold tracking-wider uppercase font-sans"
             >CONTACT</span
@@ -508,7 +527,7 @@
     <!-- SECTION 3: ABOUT US & SERVICES -->
     <section id="about" class="py-24 px-6 md:px-12">
       <div
-        class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-black/10 pb-8"
+        class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-chrome/60 pb-8"
       >
         <div>
           <span
@@ -535,7 +554,7 @@
               class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
             />
             <span
-              class="absolute top-4 left-4 bg-[#111] text-[#f4f3f0] font-mono text-[10px] px-3 py-1"
+              class="absolute top-4 left-4 bg-midnight text-paper font-mono text-[10px] px-3 py-1"
               >SERVICE // 001</span
             >
           </div>
@@ -561,7 +580,7 @@
               class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
             />
             <span
-              class="absolute top-4 left-4 bg-[#111] text-[#f4f3f0] font-mono text-[10px] px-3 py-1"
+              class="absolute top-4 left-4 bg-midnight text-paper font-mono text-[10px] px-3 py-1"
               >SERVICE // 002</span
             >
           </div>
@@ -583,7 +602,7 @@
     <!-- SECTION 4: MANIFESTO -->
     <section
       id="manifesto"
-      class="relative bg-[#111] text-[#f4f3f0] py-32 px-6 md:px-12 overflow-hidden"
+      class="relative bg-midnight text-paper py-32 px-6 md:px-12 overflow-hidden"
     >
       <!-- High Contrast Background -->
       <div class="absolute inset-0 opacity-20 pointer-events-none">
@@ -618,7 +637,7 @@
         </div>
 
         <div
-          class="lg:col-span-4 order-1 lg:order-2 flex flex-col items-start lg:items-end font-mono text-xs text-stone-400 gap-4 border-l lg:border-l-0 lg:border-r border-white/20 pl-6 lg:pl-0 lg:pr-6"
+          class="lg:col-span-4 order-1 lg:order-2 flex flex-col items-start lg:items-end font-mono text-xs text-chrome gap-4 border-l lg:border-l-0 lg:border-r border-chrome/30 pl-6 lg:pl-0 lg:pr-6"
         >
           <div>
             <span class="text-white block font-bold">CLIENTELE</span>
@@ -667,7 +686,7 @@
             class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
           >
             <span class="font-mono text-xs tracking-widest">SECTOR // 01</span>
             <div>
@@ -690,7 +709,7 @@
             class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
           >
             <span class="font-mono text-xs tracking-widest">SECTOR // 02</span>
             <div>
@@ -713,7 +732,7 @@
             class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
           >
             <span class="font-mono text-xs tracking-widest">SECTOR // 03</span>
             <div>
@@ -736,7 +755,7 @@
             class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-[#111]/90 via-[#111]/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
           >
             <span class="font-mono text-xs tracking-widest">SECTOR // 04</span>
             <div>
@@ -752,7 +771,7 @@
     </section>
 
     <!-- SECTION 6: SERVICES LIST; plus icons are a visual cue and these rows are not expandable. -->
-    <section class="py-24 px-6 md:px-12 border-t border-black/10">
+    <section class="py-24 px-6 md:px-12 border-t border-chrome/60">
       <div class="max-w-4xl mb-12">
         <span class="font-mono text-xs text-stone-500 tracking-widest uppercase"
           >OUR SERVICES BREAKDOWN</span
@@ -762,10 +781,10 @@
         </h2>
       </div>
 
-      <div class="divide-y divide-black/10">
+      <div class="divide-y divide-chrome/60">
         <!-- Service 1 -->
         <div
-          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
         >
           <div class="flex justify-between items-center">
             <span class="font-mono text-xs text-stone-500">01</span>
@@ -783,7 +802,7 @@
 
         <!-- Service 2 -->
         <div
-          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
         >
           <div class="flex justify-between items-center">
             <span class="font-mono text-xs text-stone-500">02</span>
@@ -801,7 +820,7 @@
 
         <!-- Service 3 -->
         <div
-          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
         >
           <div class="flex justify-between items-center">
             <span class="font-mono text-xs text-stone-500">03</span>
@@ -819,7 +838,7 @@
 
         <!-- Service 4 -->
         <div
-          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
         >
           <div class="flex justify-between items-center">
             <span class="font-mono text-xs text-stone-500">04</span>
@@ -837,7 +856,7 @@
 
         <!-- Service 5 -->
         <div
-          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
         >
           <div class="flex justify-between items-center">
             <span class="font-mono text-xs text-stone-500">05</span>
@@ -855,7 +874,7 @@
 
         <!-- Service 6 -->
         <div
-          class="py-8 group cursor-pointer hover:bg-black/5 transition-colors px-4 -mx-4"
+          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
         >
           <div class="flex justify-between items-center">
             <span class="font-mono text-xs text-stone-500">06</span>
@@ -874,7 +893,7 @@
     </section>
 
     <!-- SECTION 7: WHY CHOOSE AIRFROST -->
-    <section id="why-choose" class="py-24 px-6 md:px-12 bg-[#e8e7e1]">
+    <section id="why-choose" class="py-24 px-6 md:px-12 bg-ice">
       <div class="max-w-4xl mb-16">
         <span class="font-mono text-xs text-stone-500 tracking-widest uppercase"
           >EXPERTISE & TRUST</span
@@ -887,10 +906,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Pillar 1 -->
         <div
-          class="bg-[#f4f3f0] p-8 flex flex-col justify-between h-[320px] border border-black/10"
+          class="bg-paper p-8 flex flex-col justify-between h-[320px] border border-chrome"
         >
           <div
-            class="w-12 h-12 bg-[#111] text-[#f4f3f0] rounded-full flex items-center justify-center"
+            class="w-12 h-12 bg-air-blue text-paper rounded-full flex items-center justify-center"
           >
             <i data-lucide="zap" class="w-6 h-6"></i>
           </div>
@@ -908,10 +927,10 @@
 
         <!-- Pillar 2 -->
         <div
-          class="bg-[#f4f3f0] p-8 flex flex-col justify-between h-[320px] border border-black/10"
+          class="bg-paper p-8 flex flex-col justify-between h-[320px] border border-chrome"
         >
           <div
-            class="w-12 h-12 bg-[#111] text-[#f4f3f0] rounded-full flex items-center justify-center"
+            class="w-12 h-12 bg-air-blue text-paper rounded-full flex items-center justify-center"
           >
             <i data-lucide="shield-check" class="w-6 h-6"></i>
           </div>
@@ -929,10 +948,10 @@
 
         <!-- Pillar 3 -->
         <div
-          class="bg-[#f4f3f0] p-8 flex flex-col justify-between h-[320px] border border-black/10"
+          class="bg-paper p-8 flex flex-col justify-between h-[320px] border border-chrome"
         >
           <div
-            class="w-12 h-12 bg-[#111] text-[#f4f3f0] rounded-full flex items-center justify-center"
+            class="w-12 h-12 bg-air-blue text-paper rounded-full flex items-center justify-center"
           >
             <i data-lucide="cpu" class="w-6 h-6"></i>
           </div>
@@ -951,53 +970,53 @@
     </section>
 
     <!-- SECTION 8: BRAND MARQUEE; the repeated content keeps the moving strip visually continuous. -->
-    <section class="py-16 bg-[#111] text-[#f4f3f0] overflow-hidden">
+    <section class="py-16 bg-midnight text-paper overflow-hidden">
       <div class="flex whitespace-nowrap animate-marquee">
         <div
-          class="flex gap-16 font-display text-5xl md:text-7xl tracking-wider text-[#f4f3f0]/30 shrink-0"
+          class="flex gap-16 font-display text-5xl md:text-7xl tracking-wider text-paper/30 shrink-0"
         >
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >HISENSE</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >AIR CONDITIONING</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >REFRIGERATION</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >ELECTRICAL SOLUTIONS</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >VRV UNITS</span
           >
           <span>—</span>
         </div>
         <div
-          class="flex gap-16 font-display text-5xl md:text-7xl tracking-wider text-[#f4f3f0]/30 shrink-0"
+          class="flex gap-16 font-display text-5xl md:text-7xl tracking-wider text-paper/30 shrink-0"
           aria-hidden="true"
         >
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >HISENSE</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >AIR CONDITIONING</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >REFRIGERATION</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >ELECTRICAL SOLUTIONS</span
           >
           <span>—</span>
-          <span class="hover:text-[#f4f3f0] transition-colors cursor-pointer"
+          <span class="hover:text-frost-cyan transition-colors cursor-pointer"
             >VRV UNITS</span
           >
           <span>—</span>
@@ -1008,10 +1027,10 @@
     <!-- SECTION 9: FOOTER & CONTACT -->
     <footer
       id="contact"
-      class="relative z-10 bg-[#111] text-[#f4f3f0] rounded-t-[2rem] md:rounded-t-[4rem] -mt-12 pt-20 pb-12 px-6 md:px-12"
+      class="relative z-10 bg-midnight text-paper rounded-t-[2rem] md:rounded-t-[4rem] -mt-12 pt-20 pb-12 px-6 md:px-12"
     >
       <div
-        class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10"
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-chrome/20"
       >
         <!-- Contact Header -->
         <div class="lg:col-span-7">
@@ -1024,21 +1043,21 @@
           >
             <a
               href="tel:+256756370690"
-              class="hover:text-white transition-colors flex items-center gap-3"
+              class="hover:text-frost-cyan transition-colors flex items-center gap-3"
             >
               <i data-lucide="phone" class="w-6 h-6 text-stone-400"></i> +256
               756 370 690
             </a>
             <a
               href="tel:+256747179967"
-              class="hover:text-white transition-colors flex items-center gap-3"
+              class="hover:text-frost-cyan transition-colors flex items-center gap-3"
             >
               <i data-lucide="phone-call" class="w-6 h-6 text-stone-400"></i>
               +256 747 179 967
             </a>
             <a
               href="mailto:airfrostengineeringltd@gmail.com"
-              class="hover:text-white transition-colors flex items-center gap-3 break-all"
+              class="hover:text-frost-cyan transition-colors flex items-center gap-3 break-all"
             >
               <i data-lucide="mail" class="w-6 h-6 text-stone-400"></i>
               airfrostengineeringltd@gmail.com
@@ -1071,7 +1090,7 @@
               <input
                 type="text"
                 placeholder="e.g. Kampala Medical Center / Hotel Manager"
-                class="w-full bg-transparent border-b border-white/30 py-3 text-sm focus:outline-none focus:border-white placeholder:text-white/30 font-sans"
+                class="w-full bg-transparent border-b border-chrome/40 py-3 text-sm focus:outline-none focus:border-frost-cyan placeholder:text-chrome/60 font-sans"
               />
             </div>
             <div>
@@ -1081,7 +1100,7 @@
               <input
                 type="text"
                 placeholder="Contact Details..."
-                class="w-full bg-transparent border-b border-white/30 py-3 text-sm focus:outline-none focus:border-white placeholder:text-white/30 font-sans"
+                class="w-full bg-transparent border-b border-chrome/40 py-3 text-sm focus:outline-none focus:border-frost-cyan placeholder:text-chrome/60 font-sans"
               />
             </div>
             <div>
@@ -1091,12 +1110,12 @@
               <input
                 type="text"
                 placeholder="AC Installation, Maintenance, VRV System, Refrigeration..."
-                class="w-full bg-transparent border-b border-white/30 py-3 text-sm focus:outline-none focus:border-white placeholder:text-white/30 font-sans"
+                class="w-full bg-transparent border-b border-chrome/40 py-3 text-sm focus:outline-none focus:border-frost-cyan placeholder:text-chrome/60 font-sans"
               />
             </div>
             <button
               type="submit"
-              class="mt-4 bg-[#f4f3f0] text-[#111] py-4 font-mono text-xs font-bold uppercase tracking-widest hover:bg-stone-300 transition-colors"
+              class="mt-4 bg-air-blue text-paper py-4 font-mono text-xs font-bold uppercase tracking-widest hover:bg-frost-cyan transition-colors"
             >
               SEND INQUIRY
             </button>
