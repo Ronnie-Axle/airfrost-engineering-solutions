@@ -5,7 +5,7 @@
 The contact form validates the email address in the browser and again in the
 Vercel serverless function at `api/contact.js`. The function sends inquiries to
 `ronniemuworozi@gmail.com` through Resend. The API key must only be configured
-as a server-side environment variable; never add it to `airfrost.html`.
+as a server-side environment variable; never add it to `index.html`.
 
 1. In Resend, create or rotate an API key.
 2. In Vercel project settings, add `RESEND_API_KEY` for the environments where
