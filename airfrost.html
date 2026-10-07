@@ -342,7 +342,7 @@
           </g>
         </svg>
         <span
-          class="whitespace-nowrap font-display text-[28px] tracking-[0.06em] uppercase sm:text-base md:text-lg"
+          class="whitespace-nowrap font-display text-[15px] tracking-[0.06em] uppercase sm:text-base md:text-lg"
           >Airfrost Engineering Solutions</span
         >
       </a>
@@ -1081,39 +1081,59 @@
 
         <!-- Contact Form -->
         <div class="lg:col-span-5 flex flex-col justify-end">
-          <!-- Demo form: submission is intentionally prevented until a backend endpoint is connected. -->
-          <form class="flex flex-col gap-6" onsubmit="event.preventDefault()">
+          <form id="contact-form" class="flex flex-col gap-6">
             <div>
-              <label class="font-mono text-xs text-stone-400 uppercase"
+              <label for="contact-name" class="font-mono text-xs text-stone-400 uppercase"
                 >Your Name / Organization</label
               >
               <input
+                id="contact-name"
+                name="name"
                 type="text"
+                required
+                maxlength="120"
+                autocomplete="name"
                 placeholder="e.g. Kampala Medical Center / Hotel Manager"
                 class="w-full bg-transparent border-b border-chrome/40 py-3 text-sm focus:outline-none focus:border-frost-cyan placeholder:text-chrome/60 font-sans"
               />
             </div>
             <div>
-              <label class="font-mono text-xs text-stone-400 uppercase"
-                >Email / Phone</label
+              <label for="contact-email" class="font-mono text-xs text-stone-400 uppercase"
+                >Email address</label
               >
               <input
-                type="text"
-                placeholder="Contact Details..."
+                id="contact-email"
+                name="email"
+                type="email"
+                required
+                maxlength="254"
+                autocomplete="email"
+                inputmode="email"
+                placeholder="you@example.com"
                 class="w-full bg-transparent border-b border-chrome/40 py-3 text-sm focus:outline-none focus:border-frost-cyan placeholder:text-chrome/60 font-sans"
               />
             </div>
             <div>
-              <label class="font-mono text-xs text-stone-400 uppercase"
+              <label for="contact-service" class="font-mono text-xs text-stone-400 uppercase"
                 >Required Engineering Service</label
               >
               <input
+                id="contact-service"
+                name="message"
                 type="text"
+                required
+                maxlength="2000"
                 placeholder="AC Installation, Maintenance, VRV System, Refrigeration..."
                 class="w-full bg-transparent border-b border-chrome/40 py-3 text-sm focus:outline-none focus:border-frost-cyan placeholder:text-chrome/60 font-sans"
               />
             </div>
+            <div class="absolute -left-[10000px]" aria-hidden="true">
+              <label for="contact-website">Leave this field empty</label>
+              <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <p id="contact-form-status" class="min-h-5 font-mono text-xs" role="status" aria-live="polite"></p>
             <button
+              id="contact-submit"
               type="submit"
               class="mt-4 bg-air-blue text-paper py-4 font-mono text-xs font-bold uppercase tracking-widest hover:bg-frost-cyan transition-colors"
             >
@@ -1151,6 +1171,51 @@
     <!-- JS Menu Controller & Lucide Icons -->
     <script>
       lucide.createIcons();
+
+      const contactForm = document.getElementById("contact-form");
+      const contactStatus = document.getElementById("contact-form-status");
+      const contactSubmit = document.getElementById("contact-submit");
+
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!contactForm.reportValidity()) return;
+
+        contactStatus.textContent = "Sending your inquiry…";
+        contactStatus.className =
+          "min-h-5 font-mono text-xs text-chrome";
+        contactSubmit.disabled = true;
+        contactSubmit.textContent = "SENDING…";
+
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(
+              Object.fromEntries(new FormData(contactForm).entries()),
+            ),
+          });
+          const result = await response.json();
+
+          if (!response.ok) {
+            throw new Error(result.error || "Unable to send your inquiry.");
+          }
+
+          contactForm.reset();
+          contactStatus.textContent =
+            "Thank you. Your inquiry has been sent.";
+          contactStatus.className =
+            "min-h-5 font-mono text-xs text-frost-cyan";
+        } catch (error) {
+          console.error("Contact form submission failed:", error);
+          contactStatus.textContent =
+            error.message || "Unable to send your inquiry. Please try again.";
+          contactStatus.className =
+            "min-h-5 font-mono text-xs text-red-300";
+        } finally {
+          contactSubmit.disabled = false;
+          contactSubmit.textContent = "SEND INQUIRY";
+        }
+      });
     </script>
   </body>
 </html>

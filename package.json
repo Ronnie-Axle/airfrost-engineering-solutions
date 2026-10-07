@@ -1,0 +1,8 @@
+{
+  "name": "airfrost-engineering-solutions",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "resend": "^4.8.0"
+  }
+}
