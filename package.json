@@ -2,6 +2,9 @@
   "name": "airfrost-engineering-solutions",
   "private": true,
   "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
   "dependencies": {
     "resend": "^4.8.0"
   }
