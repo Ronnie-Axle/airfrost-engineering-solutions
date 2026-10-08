@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0B1B2B" />
     <title>Airfrost Engineering Solutions — Engineered For Comfort</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=2" />
+    <link rel="shortcut icon" type="image/svg+xml" href="./favicon.svg?v=2" />
+    <link rel="apple-touch-icon" href="./favicon.svg?v=2" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,6 +79,20 @@
       * {
         -ms-overflow-style: none;
         scrollbar-width: none;
+      }
+      #expertise .expertise-scroller {
+        -ms-overflow-style: auto;
+        scrollbar-color: #00a3e0 #d1d5db;
+        scrollbar-width: thin;
+      }
+      #expertise .expertise-scroller::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background: #d1d5db;
+      }
+      #expertise .expertise-scroller::-webkit-scrollbar-thumb {
+        border-radius: 9999px;
+        background: #00a3e0;
       }
     </style>
   </head>
@@ -357,8 +375,8 @@
         <a href="#services" class="transition-colors hover:text-midnight"
           >Services</a
         >
-        <a href="#sectors" class="transition-colors hover:text-midnight"
-          >Sectors</a
+        <a href="#projects" class="transition-colors hover:text-midnight"
+          >Projects</a
         >
         <a href="#why-choose" class="transition-colors hover:text-midnight"
           >Why Airfrost</a
@@ -404,7 +422,7 @@
           </p>
         </div>
 
-        <!-- Right image column layers the gray block, blueprint, grayscale image, and status card. -->
+        <!-- Right image column layers the gray block, blueprint, full-color image, and status card. -->
         <div class="lg:col-span-5 relative">
           <!-- Background L1 Box -->
           <div
@@ -436,9 +454,9 @@
           <!-- Hero Image L3 -->
           <div class="relative z-10 overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1600&auto=format&fit=crop"
+              src="./assets/HVAC_Technician.png"
               alt="HVAC Installation Technician"
-              class="w-full h-[450px] md:h-[550px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              class="w-full h-[450px] md:h-[550px] object-cover transition-all duration-700"
             />
           </div>
 
@@ -549,9 +567,9 @@
         <div id="services" class="group cursor-pointer">
           <div class="overflow-hidden bg-stone-300 relative aspect-[4/3]">
             <img
-              src="https://media.istockphoto.com/id/1389855299/photo/close-up-view-of-air-conditioner-in-modern-open-plan-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=W85ene3xZeQoG45dYrH217pXAK_FndRZfE3CPNoygVA="
+              src="./assets/09_DSB_Office_Extensions.jpeg"
               alt="Commercial VRVs & Air Regulation"
-              class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
+              class="w-full h-full object-cover contrast-125 transition-transform duration-700 group-hover:scale-105"
             />
             <span
               class="absolute top-4 left-4 bg-midnight text-paper font-mono text-[10px] px-3 py-1"
@@ -575,9 +593,9 @@
         <div class="group cursor-pointer md:mt-24">
           <div class="overflow-hidden bg-stone-300 relative aspect-[4/3]">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYValRf9tUI4EdIN8TAJRAH3lngFJHdlU7AhMF3BZ59w&s=10"
+              src="./assets/08_Kakira_Sweet_Factory.jpeg"
               alt="Industrial Cooling Systems Installation"
-              class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
+              class="w-full h-full object-cover contrast-125 transition-transform duration-700 group-hover:scale-105"
             />
             <span
               class="absolute top-4 left-4 bg-midnight text-paper font-mono text-[10px] px-3 py-1"
@@ -607,9 +625,9 @@
       <!-- High Contrast Background -->
       <div class="absolute inset-0 opacity-20 pointer-events-none">
         <img
-          src="https://media.istockphoto.com/id/1389855299/photo/close-up-view-of-air-conditioner-in-modern-open-plan-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=W85ene3xZeQoG45dYrH217pXAK_FndRZfE3CPNoygVA="
+          src="./assets/07_Military_Server_Room_Mbuya.jpeg"
           alt="Engineering Infrastructure"
-          class="w-full h-full object-cover grayscale contrast-200"
+          class="w-full h-full object-cover contrast-200"
         />
       </div>
 
@@ -655,122 +673,511 @@
       </div>
     </section>
 
-    <!-- SECTION 5: TARGET SECTORS -->
-    <section id="sectors" class="py-24 px-6 md:px-12">
+    <!-- SECTION 5: OUR EXPERTISE AREAS -->
+    <section
+      id="expertise"
+      class="border-y border-chrome/60 bg-ice py-20 px-6 md:px-12"
+    >
       <div
-        class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12"
+        class="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"
       >
-        <div>
-          <span
-            class="font-mono text-xs text-stone-500 tracking-widest uppercase"
-            >INDUSTRIES & CLIENTS</span
-          >
-          <h2 class="font-editorial text-4xl md:text-5xl font-normal mt-2">
-            Key Sectors Served
-          </h2>
-        </div>
-        <span class="font-mono text-xs text-stone-500 mt-4 md:mt-0"
-          >SCROLL HORIZONTALLY →</span
+        <span class="font-mono text-xs uppercase tracking-widest text-stone-500"
+          >OUR EXPERTISE AREAS</span
+        >
+        <span class="font-mono text-xs text-stone-500"
+          >SWIPE OR SCROLL TO EXPLORE →</span
         >
       </div>
-
-      <!-- Horizontal Snap Scroller -->
-      <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-2">
-        <!-- Sector 1 -->
-        <div
-          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+      <div
+        class="expertise-scroller flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 pt-2"
+      >
+        <article
+          class="group relative h-[480px] min-w-[85vw] snap-start overflow-hidden bg-midnight md:min-w-[28vw]"
         >
           <img
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop"
-            alt="Hospitals Sector"
-            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6NNBbrPKeDU-Up85QfPKVCxtWDDCd9H6IMfbEJGprQg&s=10"
+            alt="Hospital building"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-midnight/90 via-midnight/20 to-transparent p-8 text-white"
           >
-            <span class="font-mono text-xs tracking-widest">SECTOR // 01</span>
-            <div>
-              <h3 class="font-display text-4xl">HOSPITALS</h3>
-              <p class="font-sans text-xs text-stone-300 mt-2">
-                Critical environment aeration, cleanroom cooling, and
-                uninterrupted refrigeration.
-              </p>
-            </div>
+            <h2 class="font-display text-4xl uppercase">Hospitals</h2>
           </div>
-        </div>
-
-        <!-- Sector 2 -->
-        <div
-          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+        </article>
+        <article
+          class="group relative h-[480px] min-w-[85vw] snap-start overflow-hidden bg-midnight md:min-w-[28vw]"
         >
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
-            alt="Residentials Sector"
-            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZqEAUwGdCzt5XBDQG6dIJhmO3RkH-yLx6U0cGYbTYQ&s=10"
+            alt="Hotel and resort"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-midnight/90 via-midnight/20 to-transparent p-8 text-white"
           >
-            <span class="font-mono text-xs tracking-widest">SECTOR // 02</span>
-            <div>
-              <h3 class="font-display text-4xl">RESIDENTIALS</h3>
-              <p class="font-sans text-xs text-stone-300 mt-2">
-                Home split AC installation, air quality management, and routine
-                servicing.
-              </p>
-            </div>
+            <h2 class="font-display text-4xl uppercase">Hotels</h2>
           </div>
-        </div>
-
-        <!-- Sector 3 -->
-        <div
-          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+        </article>
+        <article
+          class="group relative h-[480px] min-w-[85vw] snap-start overflow-hidden bg-midnight md:min-w-[28vw]"
         >
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
-            alt="Commercials Sector"
-            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV4hKe1l7eFOfpJfrlmRyclQGhFRPRXS1FlfDNqrdoBA&s=10"
+            alt="Modern residential home"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-midnight/90 via-midnight/20 to-transparent p-8 text-white"
           >
-            <span class="font-mono text-xs tracking-widest">SECTOR // 03</span>
-            <div>
-              <h3 class="font-display text-4xl">COMMERCIALS</h3>
-              <p class="font-sans text-xs text-stone-300 mt-2">
-                Offices, retail spaces, workplace climate systems, and large VRV
-                networks.
-              </p>
-            </div>
+            <h2 class="font-display text-4xl uppercase">Residentials</h2>
           </div>
-        </div>
-
-        <!-- Sector 4 -->
-        <div
-          class="snap-start min-w-[85vw] md:min-w-[28vw] relative group overflow-hidden bg-stone-900 h-[480px]"
+        </article>
+        <article
+          class="group relative h-[480px] min-w-[85vw] snap-start overflow-hidden bg-midnight md:min-w-[28vw]"
         >
           <img
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop"
-            alt="Hotels Sector"
-            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROtrCI6e8-wrDx2ykHesQY0JVUXb2egiXSUugDn_Ulvg&s"
+            alt="Commercial office buildings"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/30 to-transparent flex flex-col justify-between p-8 text-white"
+            class="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-midnight/90 via-midnight/20 to-transparent p-8 text-white"
           >
-            <span class="font-mono text-xs tracking-widest">SECTOR // 04</span>
-            <div>
-              <h3 class="font-display text-4xl">HOTELS</h3>
-              <p class="font-sans text-xs text-stone-300 mt-2">
-                Centralized air conditioning, kitchen refrigeration, and guest
-                comfort optimization.
-              </p>
-            </div>
+            <h2 class="font-display text-4xl uppercase">Commercials</h2>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- SECTION 6: SERVICES LIST; plus icons are a visual cue and these rows are not expandable. -->
+    <!-- SECTION 6: PROJECT GALLERY -->
+    <section id="projects" class="py-24 px-6 md:px-12">
+      <div class="mb-12 max-w-4xl">
+        <span class="font-mono text-xs uppercase tracking-widest text-stone-500"
+          >PROJECT GALLERY</span
+        >
+        <h2 class="mt-2 font-editorial text-4xl font-normal md:text-5xl">
+          Work That Speaks for Itself
+        </h2>
+        <p
+          class="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-stone-600"
+        >
+          Our projects reflect our commitment to delivering reliable, efficient,
+          and high-quality engineering solutions. From residential installations
+          to large-scale commercial and industrial systems, each project
+          demonstrates our expertise, attention to detail, and dedication to
+          customer satisfaction. Explore some of our completed works and see how
+          Airfrost Engineering continues to create comfortable, efficient, and
+          sustainable environments.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/05_Aga_Khan_Mosque_Old_Kampala.jpeg"
+            alt="HVAC installation and maintenance project at Aga Khan Mosque, Old Kampala"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Aga Khan Mosque - Old Kampala
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Successful execution of HVAC installation and maintenance works,
+              ensuring efficient cooling performance while meeting the
+              facility's environmental and operational requirements.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/06_General_Repairs_DSB_MSL_Offices.jpeg"
+            alt="Air-conditioning control board and electrical repairs at DSB MSL Offices"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              General Repairs - DSB MSL Offices
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Troubleshooting and repair of air conditioning control boards and
+              electrical components, restoring system functionality and
+              improving operational reliability.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/07_Military_Server_Room_Mbuya.jpeg"
+            alt="Hisense air-conditioning units installed at Military Server Room Mbuya"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Military Server Room Mbuya
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Exterior installation of Hisense air-conditioning units
+              precisiously mounted for optimal cooling, efficiency and clean
+              architectural alignment.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/08_Kakira_Sweet_Factory.jpeg"
+            alt="Factory cooling installation at Kakira Sweet Factory"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Kakira Sweet Factory
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Factory Cooling installations and hydrant pipe maintenance,
+              inspection and containment of steam release near the installations
+              to ensure operational safety and system integrity.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/09_DSB_Office_Extensions.jpeg"
+            alt="Air-conditioning installation at DSB Office Extensions"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              DSB Office Extensions
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Air-conditioning installation, optimization, precision alignment
+              and efficient cooling setup ensuring consistent airflow and
+              comfort across the workspace.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/10_DSB_New_Offices.jpeg"
+            alt="Exterior air-conditioning installation at DSB New Offices"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              DSB New Offices
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Exterior air-conditioning installation along modular units,
+              optimized alignment and insulated piping for efficient cooling
+              performance and environmental control.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/11_New_NSSF_Building_Mbale_Town.jpeg"
+            alt="Rooftop air-conditioning installation at New NSSF Building, Mbale Town"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              New NSSF Building Mbale Town
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Rooftop installation of Hisense air-conditioning units with
+              precision alignment and electrical integration ensuring efficient
+              cooling performance and system reliability.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/12_Muhick_Oil_Gas_Kyotera_CPP_Residential_Camp_1.jpeg"
+            alt="Air-conditioning units inside Muhick Oil Gas Kyotera CPP Residential Camp"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Muhick Oil Gas Kyotera CPP Residential Camp
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Air-conditioning units integrated across modular cubicles to
+              ensure balanced cooling, comfort, and energy-efficient operation
+              for occupants.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/13_Muhick_Oil_Gas_Kyotera_CPP_Residential_Camp_2.jpeg"
+            alt="Exterior air-conditioning units at Muhick Oil Gas Kyotera CPP Residential Camp"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Muhick Oil Gas Kyotera CPP Residential Camp
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Exterior air-conditioning units mounted on prefabricated housing
+              for efficient cooling and climate control across the facility.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/14_Muhick_Oil_Gas_Kyotera_CPP_Residential_Camp_3.jpeg"
+            alt="Technician maintaining an air-conditioning unit at Muhick Oil and Gas facility"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Muhick Oil Gas Kyotera CPP Residential Camp
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Technician performing maintenance on Letvsm air-conditioning unit
+              safe handling of wiring and components to ensure reliable cooling
+              performance at Muhick Oil &amp; Gas facility.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/15_MSL_Kitchen_Bugungu_Camp.jpeg"
+            alt="Hisense outdoor air-conditioning units at MSL Kitchen Bugungu Camp"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              MSL Kitchen Bugungu Camp
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Exterior Hisense outdoor units installed on elevated wall
+              brackets, optimized spacing and structured conduit layout for
+              dependable performance.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/16_Aquarious_Resorte_Beach_Hotel_KIGO.jpeg"
+            alt="Air-conditioning units at Aquarious Resorte Beach Hotel KIGO"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Aquarious Resorte Beach Hotel KIGO
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Air-conditioning units integrated across the chill zone to ensure
+              balanced cooling and comfort for venue's occupants.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/17_DHL_Main_Offices.jpeg"
+            alt="Hisense air-conditioning installation at DHL main Offices"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              DHL main Offices
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Exterior installation of Hisense air-conditioning units at DHL
+              Global Forwarding -- aligned for efficient cooling and climate
+              control across the logistics facility.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/18_Repairs_At_Radison_Blue_Hotel_Juba.jpeg"
+            alt="Technicians installing a Hisense Hi-Flexi system at Radison Blue Hotel Juba"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Repairs At Radison Blue Hotel Juba South Sudan
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Technicians conducting rooftop installation of Hisense Hi-Flexi
+              system compressors, electrical panels, and refrigerant lines
+              aligned for reliable operation.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/19_Radison_Blue_Hotel_Juba.jpeg"
+            alt="Cold room insulation assembly at Radison Blue Hotel Juba"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Radison Blue Hotel Juba South Sudan
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Technicians assembling cold room insulation, precision placement
+              of panels and cooling systems ensuring efficient preservation
+              environment.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/20_Supermarket_Cold_Room_Installation.jpeg"
+            alt="Supermarket cold room preserving vegetables and fruit"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Supermarket Cold room installation
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Vegetables and fruits preservation environment using cold room
+              equipment under controlled cooling for extended shelf life.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/21_Bugungu_Camp.jpeg"
+            alt="Air-conditioning units at Bugungu Camp"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">Bugungu Camp</h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Air-conditioning units integrated across modular cubicles to
+              ensure balanced cooling, comfort, and energy-efficient operation
+              for occupants.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/22_Total_Energies_Stores.jpeg"
+            alt="Temperature-controlled cold storage at Total Energies Stores"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Total Energies Stores
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Keeping freshness locked in. Our cold storage solutions deliver
+              reliable, temperature-controlled environments tailored for your
+              perishables in shelf.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/23_Yaket_Factory_Zirobwe.jpeg"
+            alt="Compressed air system diagnostics and repairs at Yaket Factory Zirobwe"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Yaket Factory Zirobwe
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Your compressed air system is in good hands. From pressure gauge
+              diagnostics to compressor servicing, full air dryer repairs by
+              experienced cooling technicians.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/24_Nvuma_Shoppers_Entebbe_Kitooro.jpeg"
+            alt="Air-conditioning installation from ground floor to rooftop at Nvuma Shoppers Entebbe Kitooro"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Nvuma Shoppers Entebbe Kitooro
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              From ground floor to rooftop - AC installations and servicing
+              across entire building. No job too big, no floor too high!
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/25_Venom_Printing_Centre_Wilson_Street_Kampala.jpeg"
+            alt="Fan blade and compressor repair at Venom Printing Centre Wilson Street Kampala"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Venom Printing Centre Wilson Street Kampala
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-stone-600">
+              Repair of a damaged fan blade and compressor to restore proper
+              aeration of the exterior environment.
+            </p>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/26_Our_Delivery_Van_Offloading_Sites.jpeg"
+            alt="Airfrost delivery van offloading equipment at project sites"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Our Delivery Van Offloading Sites
+            </h3>
+          </div>
+        </article>
+        <article class="overflow-hidden border border-chrome/60 bg-white">
+          <img
+            src="./assets/27_Repairs_At_Our_Workshop.jpeg"
+            alt="Air-conditioning repairs at the Airfrost workshop"
+            class="h-64 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="mt-2 font-display text-2xl uppercase">
+              Repairs At Our Workshop
+            </h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 6: EXPANDABLE SERVICES -->
     <section class="py-24 px-6 md:px-12 border-t border-chrome/60">
       <div class="max-w-4xl mb-12">
         <span class="font-mono text-xs text-stone-500 tracking-widest uppercase"
@@ -782,113 +1189,191 @@
       </div>
 
       <div class="divide-y divide-chrome/60">
-        <!-- Service 1 -->
-        <div
-          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
+        <article
+          class="service-accordion py-8 px-4 -mx-4 transition-colors hover:bg-ice"
+          data-service-accordion
         >
-          <div class="flex justify-between items-center">
+          <button
+            type="button"
+            class="flex w-full items-center gap-4 text-left"
+            aria-expanded="false"
+            aria-controls="service-details-1"
+          >
             <span class="font-mono text-xs text-stone-500">01</span>
-            <h3
-              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            <span
+              class="font-display flex-1 text-3xl uppercase tracking-wide md:text-5xl"
+              >Residential AC Installation & Maintenance</span
             >
-              Residential AC Installation & Maintenance
-            </h3>
-            <i
-              data-lucide="plus"
-              class="w-6 h-6 transition-transform group-hover:rotate-90"
-            ></i>
+            <span
+              class="service-accordion-icon font-mono text-2xl"
+              aria-hidden="true"
+              >+</span
+            >
+          </button>
+          <div id="service-details-1" class="hidden pt-8 pl-8 md:pl-12">
+            <p class="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
+              Keep your home comfortable year-round with correctly sized air
+              conditioning, careful installation, and routine maintenance. We
+              help choose the right system, improve airflow, and keep equipment
+              running efficiently.
+            </p>
           </div>
-        </div>
+        </article>
 
-        <!-- Service 2 -->
-        <div
-          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
+        <article
+          class="service-accordion py-8 px-4 -mx-4 transition-colors hover:bg-ice"
+          data-service-accordion
         >
-          <div class="flex justify-between items-center">
+          <button
+            type="button"
+            class="flex w-full items-center gap-4 text-left"
+            aria-expanded="false"
+            aria-controls="service-details-2"
+          >
             <span class="font-mono text-xs text-stone-500">02</span>
-            <h3
-              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            <span
+              class="font-display flex-1 text-3xl uppercase tracking-wide md:text-5xl"
+              >Commercial Units / VRVS & Aeration Setup</span
             >
-              Commercial Units / VRVS & Aeration Setup
-            </h3>
-            <i
-              data-lucide="plus"
-              class="w-6 h-6 transition-transform group-hover:rotate-90"
-            ></i>
+            <span
+              class="service-accordion-icon font-mono text-2xl"
+              aria-hidden="true"
+              >+</span
+            >
+          </button>
+          <div id="service-details-2" class="hidden pt-8 pl-8 md:pl-12">
+            <p class="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
+              Plan and install commercial cooling and ventilation for spaces
+              with demanding occupancy and operating schedules. Our solutions
+              support reliable temperature control, effective air distribution,
+              and straightforward ongoing servicing.
+            </p>
           </div>
-        </div>
+        </article>
 
-        <!-- Service 3 -->
-        <div
-          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
+        <article
+          class="service-accordion py-8 px-4 -mx-4 transition-colors hover:bg-ice"
+          data-service-accordion
         >
-          <div class="flex justify-between items-center">
+          <button
+            type="button"
+            class="flex w-full items-center gap-4 text-left"
+            aria-expanded="false"
+            aria-controls="service-details-3"
+          >
             <span class="font-mono text-xs text-stone-500">03</span>
-            <h3
-              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            <span
+              class="font-display flex-1 text-3xl uppercase tracking-wide md:text-5xl"
+              >Offices and Workplace Air Regulation</span
             >
-              Offices and Workplace Air Regulation
-            </h3>
-            <i
-              data-lucide="plus"
-              class="w-6 h-6 transition-transform group-hover:rotate-90"
-            ></i>
+            <span
+              class="service-accordion-icon font-mono text-2xl"
+              aria-hidden="true"
+              >+</span
+            >
+          </button>
+          <div id="service-details-3" class="hidden pt-8 pl-8 md:pl-12">
+            <p class="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
+              Create a more comfortable workplace with balanced airflow and
+              dependable climate control. We assess the space and its use to
+              recommend practical ventilation and cooling that can adapt to
+              daily occupancy.
+            </p>
           </div>
-        </div>
+        </article>
 
-        <!-- Service 4 -->
-        <div
-          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
+        <article
+          class="service-accordion py-8 px-4 -mx-4 transition-colors hover:bg-ice"
+          data-service-accordion
         >
-          <div class="flex justify-between items-center">
+          <button
+            type="button"
+            class="flex w-full items-center gap-4 text-left"
+            aria-expanded="false"
+            aria-controls="service-details-4"
+          >
             <span class="font-mono text-xs text-stone-500">04</span>
-            <h3
-              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            <span
+              class="font-display flex-1 text-3xl uppercase tracking-wide md:text-5xl"
+              >General Air Systems Maintenance</span
             >
-              General Air Systems Maintenance
-            </h3>
-            <i
-              data-lucide="plus"
-              class="w-6 h-6 transition-transform group-hover:rotate-90"
-            ></i>
+            <span
+              class="service-accordion-icon font-mono text-2xl"
+              aria-hidden="true"
+              >+</span
+            >
+          </button>
+          <div id="service-details-4" class="hidden pt-8 pl-8 md:pl-12">
+            <p class="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
+              Regular inspections and preventive maintenance help identify
+              issues early, maintain airflow, and extend equipment life. Our
+              service includes system checks, cleaning, performance testing, and
+              clear recommendations.
+            </p>
           </div>
-        </div>
+        </article>
 
-        <!-- Service 5 -->
-        <div
-          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
+        <article
+          class="service-accordion py-8 px-4 -mx-4 transition-colors hover:bg-ice"
+          data-service-accordion
         >
-          <div class="flex justify-between items-center">
+          <button
+            type="button"
+            class="flex w-full items-center gap-4 text-left"
+            aria-expanded="false"
+            aria-controls="service-details-5"
+          >
             <span class="font-mono text-xs text-stone-500">05</span>
-            <h3
-              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            <span
+              class="font-display flex-1 text-3xl uppercase tracking-wide md:text-5xl"
+              >Industrial Cooling Systems Installation</span
             >
-              Industrial Cooling Systems Installation
-            </h3>
-            <i
-              data-lucide="plus"
-              class="w-6 h-6 transition-transform group-hover:rotate-90"
-            ></i>
+            <span
+              class="service-accordion-icon font-mono text-2xl"
+              aria-hidden="true"
+              >+</span
+            >
+          </button>
+          <div id="service-details-5" class="hidden pt-8 pl-8 md:pl-12">
+            <p class="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
+              Support production and process requirements with robust cooling
+              designed for the facility. We coordinate equipment selection,
+              installation, commissioning, and maintenance around operational
+              needs.
+            </p>
           </div>
-        </div>
+        </article>
 
-        <!-- Service 6 -->
-        <div
-          class="py-8 group cursor-pointer hover:bg-ice transition-colors px-4 -mx-4"
+        <article
+          class="service-accordion py-8 px-4 -mx-4 transition-colors hover:bg-ice"
+          data-service-accordion
         >
-          <div class="flex justify-between items-center">
+          <button
+            type="button"
+            class="flex w-full items-center gap-4 text-left"
+            aria-expanded="false"
+            aria-controls="service-details-6"
+          >
             <span class="font-mono text-xs text-stone-500">06</span>
-            <h3
-              class="font-display text-3xl md:text-5xl uppercase tracking-wide"
+            <span
+              class="font-display flex-1 text-3xl uppercase tracking-wide md:text-5xl"
+              >Material & Equipment Supply</span
             >
-              Material & Equipment Supply
-            </h3>
-            <i
-              data-lucide="plus"
-              class="w-6 h-6 transition-transform group-hover:rotate-90"
-            ></i>
+            <span
+              class="service-accordion-icon font-mono text-2xl"
+              aria-hidden="true"
+              >+</span
+            >
+          </button>
+          <div id="service-details-6" class="hidden pt-8 pl-8 md:pl-12">
+            <p class="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
+              Source dependable HVAC equipment, components, and installation
+              materials for new projects and replacement work. We help match
+              products to system requirements and provide practical supply
+              support.
+            </p>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -1083,7 +1568,9 @@
         <div class="lg:col-span-5 flex flex-col justify-end">
           <form id="contact-form" class="flex flex-col gap-6">
             <div>
-              <label for="contact-name" class="font-mono text-xs text-stone-400 uppercase"
+              <label
+                for="contact-name"
+                class="font-mono text-xs text-stone-400 uppercase"
                 >Your Name / Organization</label
               >
               <input
@@ -1098,7 +1585,9 @@
               />
             </div>
             <div>
-              <label for="contact-email" class="font-mono text-xs text-stone-400 uppercase"
+              <label
+                for="contact-email"
+                class="font-mono text-xs text-stone-400 uppercase"
                 >Email address</label
               >
               <input
@@ -1114,7 +1603,9 @@
               />
             </div>
             <div>
-              <label for="contact-service" class="font-mono text-xs text-stone-400 uppercase"
+              <label
+                for="contact-service"
+                class="font-mono text-xs text-stone-400 uppercase"
                 >Required Engineering Service</label
               >
               <input
@@ -1129,9 +1620,20 @@
             </div>
             <div class="absolute -left-[10000px]" aria-hidden="true">
               <label for="contact-website">Leave this field empty</label>
-              <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              <input
+                id="contact-website"
+                name="website"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
             </div>
-            <p id="contact-form-status" class="min-h-5 font-mono text-xs" role="status" aria-live="polite"></p>
+            <p
+              id="contact-form-status"
+              class="min-h-5 font-mono text-xs"
+              role="status"
+              aria-live="polite"
+            ></p>
             <button
               id="contact-submit"
               type="submit"
@@ -1172,6 +1674,28 @@
     <script>
       lucide.createIcons();
 
+      document.querySelectorAll("[data-service-accordion]").forEach((item) => {
+        const toggle = item.querySelector("button");
+        const details = document.getElementById(
+          toggle.getAttribute("aria-controls"),
+        );
+        const icon = item.querySelector(".service-accordion-icon");
+
+        const setExpanded = (expanded) => {
+          toggle.setAttribute("aria-expanded", String(expanded));
+          details.classList.toggle("hidden", !expanded);
+          icon.textContent = expanded ? "−" : "+";
+        };
+
+        toggle.addEventListener("click", () => {
+          setExpanded(toggle.getAttribute("aria-expanded") !== "true");
+        });
+
+        item.addEventListener("mouseleave", () => {
+          setExpanded(false);
+        });
+      });
+
       const contactForm = document.getElementById("contact-form");
       const contactStatus = document.getElementById("contact-form-status");
       const contactSubmit = document.getElementById("contact-submit");
@@ -1181,8 +1705,7 @@
         if (!contactForm.reportValidity()) return;
 
         contactStatus.textContent = "Sending your inquiry…";
-        contactStatus.className =
-          "min-h-5 font-mono text-xs text-chrome";
+        contactStatus.className = "min-h-5 font-mono text-xs text-chrome";
         contactSubmit.disabled = true;
         contactSubmit.textContent = "SENDING…";
 
@@ -1207,16 +1730,13 @@
           }
 
           contactForm.reset();
-          contactStatus.textContent =
-            "Thank you. Your inquiry has been sent.";
-          contactStatus.className =
-            "min-h-5 font-mono text-xs text-frost-cyan";
+          contactStatus.textContent = "Thank you. Your inquiry has been sent.";
+          contactStatus.className = "min-h-5 font-mono text-xs text-frost-cyan";
         } catch (error) {
           console.error("Contact form submission failed:", error);
           contactStatus.textContent =
             error.message || "Unable to send your inquiry. Please try again.";
-          contactStatus.className =
-            "min-h-5 font-mono text-xs text-red-300";
+          contactStatus.className = "min-h-5 font-mono text-xs text-red-300";
         } finally {
           contactSubmit.disabled = false;
           contactSubmit.textContent = "SEND INQUIRY";
