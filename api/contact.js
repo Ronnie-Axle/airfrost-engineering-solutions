@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { Resend } from "resend";
 
-const recipient = "ronniemuworozi@gmail.com";
+const recipient = "airfrostengineeringltd@gmail.com";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function sendJson(res, status, body) {
