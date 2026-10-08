@@ -73,7 +73,7 @@ export default async function handler(req, res) {
 
   try {
     const { error } = await resend.emails.send({
-      from: "Airfrost Website <onboarding@resend.dev>",
+      from: "Airfrost Website <inquiry@airfrostengineering.com>",
       to: [recipient],
       replyTo: email,
       subject: `Website inquiry from ${subjectName}`,
