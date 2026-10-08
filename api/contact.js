@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const recipient = "ronniemuworozi@gmail.com";
+const recipient = "airfrostengineeringltd@gmail.com";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function sendJson(res, status, body) {
@@ -39,8 +39,7 @@ export default async function handler(req, res) {
   const name = typeof body.name === "string" ? body.name.trim() : "";
   const email =
     typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
-  const message =
-    typeof body.message === "string" ? body.message.trim() : "";
+  const message = typeof body.message === "string" ? body.message.trim() : "";
 
   if (
     name.length < 2 ||
@@ -59,7 +58,8 @@ export default async function handler(req, res) {
   if (!apiKey) {
     console.error("Contact form is not configured: RESEND_API_KEY is missing.");
     return sendJson(res, 500, {
-      error: "The contact form is temporarily unavailable. Please try again later.",
+      error:
+        "The contact form is temporarily unavailable. Please try again later.",
     });
   }
 
